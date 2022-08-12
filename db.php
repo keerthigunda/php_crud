@@ -1,11 +1,7 @@
 <?php
 session_start();
-
-$conn = mysqli_connect(
-  'tasker-gk-server.mysql.database.azure.com',
-  'gbjipigazd',
-  '82WQWJ32T34325MA$',
-  'php_mysql_crud'
-) or die(mysqli_erro($mysqli));
+$con=mysqli_init(); 
+mysqli_ssl_set($con, NULL, NULL, '/var/www/html/BaltimoreCyberTrustRoot.crt.pem', NULL, NULL); 
+mysqli_real_connect($con, "app-gk.mysql.database.azure.com", "kgunda@app-gk", "Shanmukha@1992", "php_mysql_crud", 3306);
 
 ?>
